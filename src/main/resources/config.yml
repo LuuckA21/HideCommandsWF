@@ -1,0 +1,17 @@
+# Commands section
+default:
+  - cmd1
+  - cmd2
+  - cmd3
+
+# hidecommandswf.group.<group>
+groups:
+  vip:
+    commands:
+      - cmd4
+  vip1:
+    commands:
+      - cmd5
+  vip2:
+    commands:
+      - cmd6

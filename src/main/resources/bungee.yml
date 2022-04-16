@@ -1,0 +1,5 @@
+name: HideCommandsWF
+version: '${project.version}'
+main: me.luucka.hidecommandswf.HideCommandsWF
+description: Hide commands
+author: LuuckA
