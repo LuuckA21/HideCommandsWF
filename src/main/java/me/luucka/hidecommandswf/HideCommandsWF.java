@@ -16,7 +16,6 @@ public final class HideCommandsWF extends Plugin {
     @Override
     public void onEnable() {
         this.settings = new Settings(getDataFolder());
-        ;
         getProxy().getPluginManager().registerListener(this, new PlayerListenerWaterfall(this));
     }
 
