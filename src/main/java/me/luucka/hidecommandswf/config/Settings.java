@@ -3,20 +3,17 @@ package me.luucka.hidecommandswf.config;
 import lombok.Getter;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Settings {
 
     private final BaseConfiguration config;
 
     @Getter
-    private List<String> defaultCommands;
+    private final List<String> defaultCommands = new ArrayList<>();
 
     @Getter
-    private Map<String, List<String>> groupsCommands;
+    private final Map<String, List<String>> groupsCommands = new HashMap<>();
 
     public Settings(final File dataFolder) {
         this.config = new BaseConfiguration(new File(dataFolder, "config.yml"), "/config.yml");
@@ -25,21 +22,14 @@ public class Settings {
 
     public void reloadConfig() {
         config.load();
-        defaultCommands = _getDefaultCommands();
-        groupsCommands = _getGroupsCommands();
-    }
 
-    private List<String> _getDefaultCommands() {
-        return config.getList("default", String.class);
-    }
+        defaultCommands.clear();
+        defaultCommands.addAll(config.getList("default", String.class));
 
-    private Map<String, List<String>> _getGroupsCommands() {
-        Map<String, List<String>> groupsCommands = new HashMap<>();
+        groupsCommands.clear();
         final Set<String> keys = config.getKeys(config.getSection("groups"));
         for (final String k : keys) {
-            List<String> commands = config.getList("groups." + k + ".commands", String.class);
-            groupsCommands.put(k, commands);
+            groupsCommands.put(k, config.getList("groups." + k + ".commands", String.class));
         }
-        return groupsCommands;
     }
 }

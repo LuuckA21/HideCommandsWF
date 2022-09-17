@@ -6,7 +6,7 @@
 
     <groupId>me.luucka</groupId>
     <artifactId>HideCommandsWF</artifactId>
-    <version>Build-2</version>
+    <version>Build-3</version>
     <packaging>jar</packaging>
 
     <name>HideCommandsWF</name>
@@ -17,6 +17,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <libs.configurate-yaml>4.1.2</libs.configurate-yaml>
+        <libs.lombok>1.18.24</libs.lombok>
     </properties>
 
     <build>
@@ -55,10 +56,6 @@
                                 </filter>
                             </filters>
                             <relocations>
-<!--                                <relocation>-->
-<!--                                    <pattern>org</pattern>-->
-<!--                                    <shadedPattern>me.luucka.hidecommandswf.lib</shadedPattern>-->
-<!--                                </relocation>-->
                                 <relocation>
                                     <pattern>org.spongepowered</pattern>
                                     <shadedPattern>me.luucka.hidecommandswf.lib</shadedPattern>
@@ -119,7 +116,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.22</version>
+            <version>${libs.lombok}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
