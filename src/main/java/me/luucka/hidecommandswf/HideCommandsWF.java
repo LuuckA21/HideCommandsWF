@@ -1,7 +1,6 @@
 package me.luucka.hidecommandswf;
 
 import me.luucka.hidecommandswf.commands.ReloadCommand;
-import me.luucka.hidecommandswf.config.Settings;
 import me.luucka.hidecommandswf.listeners.PlayerListenerWaterfall;
 import net.md_5.bungee.api.plugin.Plugin;
 
@@ -14,7 +13,7 @@ public final class HideCommandsWF extends Plugin {
 
     @Override
     public void onEnable() {
-        this.settings = new Settings(getDataFolder());
+        settings = new Settings(getDataFolder());
         getProxy().getPluginManager().registerCommand(this, new ReloadCommand(this));
         getProxy().getPluginManager().registerListener(this, new PlayerListenerWaterfall(this));
     }

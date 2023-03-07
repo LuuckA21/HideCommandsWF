@@ -11,7 +11,7 @@ public class ReloadCommand extends Command {
     private final HideCommandsWF plugin;
 
     public ReloadCommand(final HideCommandsWF plugin) {
-        super("hidecommandswf", "hidecommandswf.reload", "hcwf");
+        super("hidecommandswf", "hidecommandswf.admin");
         this.plugin = plugin;
     }
 

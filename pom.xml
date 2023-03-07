@@ -6,7 +6,7 @@
 
     <groupId>me.luucka</groupId>
     <artifactId>HideCommandsWF</artifactId>
-    <version>Build-3</version>
+    <version>Build-4</version>
     <packaging>jar</packaging>
 
     <name>HideCommandsWF</name>
@@ -17,7 +17,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <libs.configurate-yaml>4.1.2</libs.configurate-yaml>
-        <libs.lombok>1.18.24</libs.lombok>
+        <libs.lombok>1.18.26</libs.lombok>
     </properties>
 
     <build>
@@ -96,8 +96,8 @@
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
         <repository>
-            <id>papermc-repo</id>
-            <url>https://papermc.io/repo/repository/maven-public/</url>
+            <id>papermc</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
     </repositories>
 
@@ -105,7 +105,7 @@
         <dependency>
             <groupId>io.github.waterfallmc</groupId>
             <artifactId>waterfall-api</artifactId>
-            <version>1.18-R0.1-SNAPSHOT</version>
+            <version>1.19-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

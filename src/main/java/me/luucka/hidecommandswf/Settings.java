@@ -1,6 +1,7 @@
-package me.luucka.hidecommandswf.config;
+package me.luucka.hidecommandswf;
 
 import lombok.Getter;
+import me.luucka.hidecommandswf.config.BaseConfiguration;
 
 import java.io.File;
 import java.util.*;
@@ -22,10 +23,8 @@ public class Settings {
 
     public void reloadConfig() {
         config.load();
-
         defaultCommands.clear();
         defaultCommands.addAll(config.getList("default", String.class));
-
         groupsCommands.clear();
         final Set<String> keys = config.getKeys(config.getSection("groups"));
         for (final String k : keys) {

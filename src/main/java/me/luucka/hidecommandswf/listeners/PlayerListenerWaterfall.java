@@ -21,15 +21,14 @@ public class PlayerListenerWaterfall implements Listener {
         final ProxiedPlayer player = (ProxiedPlayer) event.getReceiver();
         if (player.hasPermission("hidecommandswf.bypass")) return;
 
-        final List<String> commands = new ArrayList<>(plugin.getDefaultCommands());
-
-        for (Map.Entry<String, List<String>> entry : plugin.getGroupsCommands().entrySet()) {
+        final List<String> defaultCommands = new ArrayList<>(plugin.getDefaultCommands());
+        final Map<String, List<String>> groupCommands = plugin.getGroupsCommands();
+        for (Map.Entry<String, List<String>> entry : groupCommands.entrySet()) {
             if (player.hasPermission("hidecommandswf.group." + entry.getKey())) {
-                commands.addAll(entry.getValue());
+                defaultCommands.addAll(entry.getValue());
             }
         }
-
-        event.getCommands().entrySet().removeIf(val -> !commands.contains(val.getKey()));
+        event.getCommands().entrySet().removeIf(val -> !defaultCommands.contains(val.getKey()));
     }
 
 }
